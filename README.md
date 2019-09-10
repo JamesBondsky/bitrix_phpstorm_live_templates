@@ -20,3 +20,15 @@
 - *bxibespve* - CIBlockElement::SetPropertyValuesEx
 - *bxibeu* - CIBlockElement::Update
 
+### CIBlockSection
+
+- *bxibsa* - CIBlockSection::Add
+- *bxibsd* - CIBlockSection::Delete
+- *bxibsgbi* - CIBlockSection::GetByID
+- *bxibsgl* - CIBlockSection::GetList
+- *bxibsgnc* - CIBlockSection::GetNavChain
+- *bxibsu* - CIBlockSection::Update
+
+### CModule
+
+- *bxmim* - CModule::IncludeModule
