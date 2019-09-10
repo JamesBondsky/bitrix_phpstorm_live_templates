@@ -47,4 +47,51 @@
       <option name="PHP Statement" value="true" />
     </context>
   </template>
+  <template name="bxibsgbi" value="$rsSection = CIBlockSection::GetByID($SECTION_ID$);&#10;if($arSection = $rsSection-&gt;GetNext()){&#10;    $END$&#10;}" description="CIBlockSection::GetByID" toReformat="true" toShortenFQNames="true">
+    <variable name="SECTION_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibsgl" value="$rsSection = CIBlockSection::GetList([&quot;SORT&quot; =&gt; &quot;ASC&quot;], [], false, [&quot;ID&quot;, &quot;IBLOCK_ID&quot;, &quot;UF_*&quot;], [&quot;nTopCount&quot; =&gt; 1]);&#10;while ($arSection = $rsSection-&gt;GetNext()) {&#10;    $END$&#10;}" description="CIBlockSection::GetList" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibsu" value="$section = new CIBlockSection;&#10;$arFields = Array(&#10;    &quot;ACTIVE&quot; =&gt; &quot;Y&quot;,&#10;    &quot;IBLOCK_SECTION_ID&quot; =&gt; false,&#10;    &quot;IBLOCK_ID&quot; =&gt; &quot;&quot;,&#10;    &quot;NAME&quot; =&gt; &quot;&quot;,&#10;    &quot;SORT&quot; =&gt; &quot;&quot;,&#10;    &quot;PICTURE&quot; =&gt; $_FILES[&quot;PICTURE&quot;],&#10;    &quot;DESCRIPTION&quot; =&gt; &quot;&quot;,&#10;    &quot;DESCRIPTION_TYPE&quot; =&gt; &quot;html&quot;&#10;);&#10;$res = $section-&gt;Update($SECTION_ID$, $arFields);&#10;if(!$res) {&#10;    echo $section-&gt;LAST_ERROR;&#10;}" description="CIBlockSection::Update" toReformat="true" toShortenFQNames="true">
+    <variable name="SECTION_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibsgnc" value="$rsSection = CIBlockSection::GetNavChain(false, $SECTION_ID$);&#10;while($arSection = $rsSection-&gt;GetNext()){&#10;&#10;}" description="CIBlockSection::GetNavChain" toReformat="true" toShortenFQNames="true">
+    <variable name="SECTION_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibsa" value="$section = new CIBlockSection;&#10;$arFields = Array(&#10;    &quot;ACTIVE&quot; =&gt; &quot;Y&quot;,&#10;    &quot;IBLOCK_SECTION_ID&quot; =&gt; false,&#10;    &quot;IBLOCK_ID&quot; =&gt; &quot;&quot;,&#10;    &quot;NAME&quot; =&gt; &quot;&quot;,&#10;    &quot;SORT&quot; =&gt; &quot;&quot;,&#10;    &quot;PICTURE&quot; =&gt; $_FILES[&quot;PICTURE&quot;],&#10;    &quot;DESCRIPTION&quot; =&gt; &quot;&quot;,&#10;    &quot;DESCRIPTION_TYPE&quot; =&gt; &quot;html&quot;&#10;);&#10;$res = $section-&gt;Add($arFields);&#10;if (!$res) {&#10;    echo $section-&gt;LAST_ERROR;&#10;}" description="CIBlockSection::Add" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibsd" value="global $DB;&#10;$DB-&gt;StartTransaction();&#10;if(!CIBlockSection::Delete($SECTION_ID$)) {&#10;    $DB-&gt;Rollback();&#10;} else {&#10;    $DB-&gt;Commit();&#10;}" description="CIBlockSection::Delete" toReformat="true" toShortenFQNames="true">
+    <variable name="SECTION_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxmim" value="CModule::IncludeModule($MODULE_NAME$);" description="CModule::IncludeModule" toReformat="true" toShortenFQNames="true">
+    <variable name="MODULE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
 </templateSet>
