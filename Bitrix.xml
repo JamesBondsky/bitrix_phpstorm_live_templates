@@ -1,0 +1,50 @@
+<templateSet group="Bitrix">
+  <template name="bxibegl" value="$rsElement = CIBlockElement::GetList([&quot;SORT&quot; =&gt; &quot;ASC&quot;], [], false, [&quot;nTopCount&quot; =&gt; 10], [&quot;IBLOCK_ID&quot;, &quot;ID&quot;]);&#10;while($arElement = $rsElement-&gt;GetNext()) {&#10;    $END$&#10;}" description="CIBlockElement::GetList" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibegbi" value="$rsElement = CIBlockElement::GetByID($ID$);&#10;if($arElement = $res-&gt;GetNext()) {&#10;    $END$&#10;}" description="CIBlockElement::GetByID" toReformat="true" toShortenFQNames="true">
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibea" value="$el = new CIBlockElement;&#10;$PROP = [&#10;    &quot;123&quot; =&gt; &quot;Foo bar&quot;&#10;];&#10;$arLoadProductArray = Array(&#10;    &quot;MODIFIED_BY&quot;    =&gt; $USER-&gt;GetID(),&#10;    &quot;IBLOCK_SECTION_ID&quot; =&gt; false,        &#10;    &quot;IBLOCK_ID&quot;      =&gt; $END$,&#10;    &quot;PROPERTY_VALUES&quot;=&gt; $PROP,&#10;    &quot;NAME&quot;           =&gt; &quot;&quot;,&#10;    &quot;ACTIVE&quot;         =&gt; &quot;Y&quot;, &#10;    &quot;PREVIEW_TEXT&quot;   =&gt; &quot;&quot;,&#10;    &quot;DETAIL_TEXT&quot;    =&gt; &quot;&quot;,&#10;    &quot;DETAIL_PICTURE&quot; =&gt; CFile::MakeFileArray($_SERVER[&quot;DOCUMENT_ROOT&quot;].&quot;/picture.jpg&quot;)&#10;);&#10;if($PRODUCT_ID = $el-&gt;Add($arLoadProductArray)){&#10;    echo &quot;New ID: &quot;.$PRODUCT_ID;&#10;} else {&#10;    echo &quot;Error: &quot;.$el-&gt;LAST_ERROR;&#10;}" description="CIBlockElement::Add" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibeu" value="$el = new CIBlockElement;&#10;$PROP = [&#10;    &quot;123&quot; =&gt; &quot;Foo bar&quot;&#10;];&#10;$arLoadProductArray = Array(&#10;    &quot;IBLOCK_SECTION_ID&quot; =&gt; false,&#10;    &quot;PROPERTY_VALUES&quot; =&gt; $PROP,&#10;    &quot;NAME&quot; =&gt; &quot;&quot;,&#10;    &quot;ACTIVE&quot; =&gt; &quot;Y&quot;,&#10;    &quot;PREVIEW_TEXT&quot; =&gt; &quot;&quot;,&#10;    &quot;DETAIL_TEXT&quot; =&gt; &quot;&quot;,&#10;    &quot;DETAIL_PICTURE&quot; =&gt; CFile::MakeFileArray($_SERVER[&quot;DOCUMENT_ROOT&quot;] . &quot;/picture.jpg&quot;)&#10;);&#10;$res = $el-&gt;Update($PRODUCT_ID$, $arLoadProductArray);&#10;if ($res === false) {&#10;    echo &quot;Error: &quot; . $el-&gt;LAST_ERROR;&#10;}" description="CIBlockElement::Update" toReformat="true" toShortenFQNames="true">
+    <variable name="PRODUCT_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibed" value="global $DB;&#10;$DB-&gt;StartTransaction();&#10;if(!CIBlockElement::Delete($ELEMENT_ID$))&#10;{&#10;    $DB-&gt;Rollback();&#10;} else {&#10;    $DB-&gt;Commit();&#10;}" description="CIBlockElement::Delete" toReformat="true" toShortenFQNames="true">
+    <variable name="ELEMENT_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibespve" value="CIBlockElement::SetPropertyValuesEx($ELEMENT_ID$, false, array($PROPERTY_CODE =&gt; $PROPERTY_VALUE));" description="CIBlockElement::SetPropertyValuesEx" toReformat="true" toShortenFQNames="true">
+    <variable name="ELEMENT_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxibegp" value="$propertyValues = array();&#10;$rsElement = CIBlockElement::GetProperty(&#10;    $IBLOCK_ID$,&#10;    $ELEMENT_ID$,&#10;    &quot;sort&quot;,&#10;    &quot;asc&quot;,&#10;    array(&quot;CODE&quot; =&gt; &quot;PROPERTY_CODE&quot;)&#10;);&#10;while ($ob = $rsElement-&gt;GetNext())&#10;{&#10;    $propertyValues[] = $ob['VALUE'];&#10;}" description="CIBlockElement::GetProperty" toReformat="true" toShortenFQNames="true">
+    <variable name="IBLOCK_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ELEMENT_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+</templateSet>
