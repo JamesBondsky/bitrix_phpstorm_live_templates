@@ -94,4 +94,69 @@
       <option name="PHP Statement" value="true" />
     </context>
   </template>
+  <template name="bxdiagd" value="Bitrix\Main\Diag\Debug::dump($VAR$);" description="Bitrix\Main\Diag\Debug::dump" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxdiaggbt" value="Bitrix\Main\Diag\Helper::getBackTrace($limit = 0, $options = null);" description="Bitrix\Main\Diag\Helper::getBackTrace" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxdiagst" value="$connection = Bitrix\Main\Application::getConnection();&#10;$tracker = $connection-&gt;startTracker();&#10;$QUERY$&#10;$connection-&gt;stopTracker();&#10;foreach ($tracker-&gt;getQueries() as $query) {&#10;    var_dump($query-&gt;getSql()); // Текст запроса&#10;    var_dump($query-&gt;getTrace()); // Стек вызовов функций, которые привели к выполнению запроса&#10;    var_dump($query-&gt;getTime()); // Время выполнения запроса в секундах&#10;}" description="Bitrix\Main\DB\Connection::startTracker" toReformat="true" toShortenFQNames="true">
+    <variable name="QUERY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxdiagtl" value="Bitrix\Main\Diag\Debug::startTimeLabel(&quot;somelabel&quot;);&#10;$CODE$&#10;Bitrix\Main\Diag\Debug::endTimeLabel(&quot;somelabel&quot;);&#10;Bitrix\Main\Diag\Debug::dump(Debug::getTimeLabels());" description="Bitrix\Main\Diag\Debug::getTimeLabels()" toReformat="true" toShortenFQNames="true">
+    <variable name="CODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxdiagwtf" value="Bitrix\Main\Diag\Debug::writeToFile($VAR$, &quot;varname&quot;, $_SERVER[&quot;DOCUMENT_ROOT&quot;] . &quot;/filepath.txt&quot;);" description="Bitrix\Main\Diag\Debug::writeToFile" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxes" value="CEvent::Send($EVENT_TYPE$, ['s1'], array(&#10;    &quot;MESSAGE&quot;             =&gt; &quot;&quot;,&#10;    &quot;EMAIL_TO&quot;            =&gt; &quot;&quot;,&#10;));" description="CEvent::Send" toReformat="true" toShortenFQNames="true">
+    <variable name="EVENT_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxogos" value="COption::GetOptionString($MODULE_ID$, $OPTION_NAME$, &quot;default_value&quot;);" description="COption::GetOptionString" toReformat="true" toShortenFQNames="true">
+    <variable name="MODULE_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPTION_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxoro" value="COption::RemoveOption($MODULE_ID$, $OPTION_NAME$);" description="COption::RemoveOption" toReformat="true" toShortenFQNames="true">
+    <variable name="MODULE_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPTION_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxosos" value="COption::SetOptionString($MODULE_ID$, $OPTION_NAME$, &quot;value&quot;);" description="COption::SetOptionString" toReformat="true" toShortenFQNames="true">
+    <variable name="MODULE_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OPTION_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
 </templateSet>
