@@ -5,7 +5,7 @@
       <option name="PHP Statement" value="true" />
     </context>
   </template>
-  <template name="bxibegbi" value="$rsElement = CIBlockElement::GetByID($ID$);&#10;if($arElement = $res-&gt;GetNext()) {&#10;    $END$&#10;}" description="CIBlockElement::GetByID" toReformat="true" toShortenFQNames="true">
+  <template name="bxibegbi" value="$rsElement = CIBlockElement::GetByID($ID$);&#10;if($arElement = $rsElement-&gt;GetNext()) {&#10;    $END$&#10;}" description="CIBlockElement::GetByID" toReformat="true" toShortenFQNames="true">
     <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="PHP Expression" value="true" />
@@ -157,6 +157,12 @@
     <context>
       <option name="PHP Expression" value="true" />
       <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="bxhlgl" value="try {&#10;    $hlBlockClass = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity(&#10;        \Bitrix\Highloadblock\HighloadBlockTable::getById($HLBLOCK_ID$)-&gt;fetch()&#10;    )-&gt;getDataClass();&#10;    $rsRow = $hlBlockClass::getList([&#10;        &quot;select&quot; =&gt; [],&#10;        &quot;filter&quot; =&gt; [],&#10;        &quot;limit&quot; =&gt; 1&#10;    ]);&#10;} catch (\Throwable $e) {&#10;    unset($e);&#10;}&#10;&#10;if (!empty($rsRow)) {&#10;    while ($arRow = $rsRow-&gt;fetch()) {&#10;        &#10;    }&#10;}" description="$hlBlockClass::getList" toReformat="false" toShortenFQNames="true">
+    <variable name="HLBLOCK_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
     </context>
   </template>
 </templateSet>

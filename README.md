@@ -43,6 +43,10 @@
 - *bxoro* - COption::RemoveOption
 - *bxosos* - COption::SetOptionString
 
+### \Bitrix\Highloadblock\HighloadBlockTable
+
+- *bxhlgl* - $hlBlockClass::getList
+
 ### Диагностика/отладка
 
 - *bxdiagd* - Bitrix\Main\Diag\Debug::dump
